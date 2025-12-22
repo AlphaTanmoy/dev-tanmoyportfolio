@@ -46,7 +46,7 @@ import { CommonModule } from '@angular/common';
           </div>
           
           <!-- Contact Cards Grid -->
-          <div class="contact-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; width: 100%; max-width: 380px; padding: 0 8px; box-sizing: border-box; margin: 0 auto;">
+          <div class="contact-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; width: 100%; max-width: 1200px; padding: 0 16px; box-sizing: border-box; margin: 0 auto;">
             
             <!-- Email Card -->
             <div class="contact-card" style="background: white; border-radius: 16px; padding: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); transition: all 0.3s ease; cursor: pointer;"
@@ -160,6 +160,7 @@ import { CommonModule } from '@angular/common';
               #contact .contact-grid {
                 grid-template-columns: repeat(3, 1fr);
                 gap: 24px;
+                max-width: 1200px;
                 padding: 0 16px;
               }
               #contact .contact-card {
@@ -181,22 +182,23 @@ import { CommonModule } from '@angular/common';
               }
             }
             
-            @media (max-width: 480px) {
-              #contact .contact-grid {
-                grid-template-columns: 1fr;
-                padding: 0 12px;
-              }
-            }
-            
             @media (max-width: 767px) {
               #contact .contact-grid {
-                padding: 0 4px;
-                gap: 8px;
-                max-width: 350px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+                max-width: 380px;
+                padding: 0 8px;
               }
               #contact .contact-card {
                 padding: 16px;
                 box-sizing: border-box;
+              }
+            }
+            
+            @media (max-width: 480px) {
+              #contact .contact-grid {
+                grid-template-columns: 1fr;
+                padding: 0 12px;
               }
             }
           </style>

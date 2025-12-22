@@ -107,19 +107,34 @@ export class MobileNavbarComponent implements OnInit, OnDestroy {
   updateActiveSection() {
     if (isPlatformBrowser(this.platformId)) {
       const sections = ['hero', 'skills', 'about', 'experience', 'education', 'achievements', 'projects', 'contact'];
-      const scrollPosition = window.scrollY + 80; // Adjusted for navbar height
+      const scrollPosition = window.scrollY + 100; // Offset for better detection
+      const windowHeight = window.innerHeight;
+      
+      let currentSection = 'hero';
+      let maxVisibility = 0;
 
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
-          const { offsetTop, offsetHeight } = element;
-          // Check if section is in view
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            this.activeSection = section;
-            break;
+          const rect = element.getBoundingClientRect();
+          const elementTop = rect.top + window.scrollY;
+          const elementBottom = elementTop + element.offsetHeight;
+          
+          // Calculate how much of the section is visible
+          const visibleTop = Math.max(scrollPosition, elementTop);
+          const visibleBottom = Math.min(scrollPosition + windowHeight, elementBottom);
+          const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+          const visibilityPercentage = visibleHeight / element.offsetHeight;
+          
+          // Update current section if this one has more visibility
+          if (visibilityPercentage > maxVisibility) {
+            maxVisibility = visibilityPercentage;
+            currentSection = section;
           }
         }
       }
+      
+      this.activeSection = currentSection;
     }
   }
 }
