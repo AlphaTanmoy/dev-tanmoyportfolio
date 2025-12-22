@@ -6,8 +6,20 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section id="contact" style="padding: 60px 0; background-color: #f9fafb;">
-      <div style="max-width: 1280px; margin: 0 auto; padding: 0 16px;">
+    <section id="contact" style="padding: 60px 0; background-color: #f9fafb; overflow-x: hidden;">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 0 16px; overflow-x: hidden;">
+        <style>
+          @media (max-width: 767px) {
+            #contact {
+              padding: 60px 0;
+              overflow-x: hidden;
+            }
+            #contact > div {
+              padding: 0 8px !important;
+              overflow-x: hidden;
+            }
+          }
+        </style>
         <div style="text-align: center; margin-bottom: 40px;">
           <h2 style="font-size: 32px; font-weight: bold; color: #1f2937; margin-bottom: 12px;">Get In Touch</h2>
           <p style="font-size: 16px; color: #6b7280; max-width: 600px; margin: 0 auto;">
@@ -34,7 +46,7 @@ import { CommonModule } from '@angular/common';
           </div>
           
           <!-- Contact Cards Grid -->
-          <div class="contact-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; width: 100%; max-width: 1200px;">
+          <div class="contact-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; width: 100%; max-width: 380px; padding: 0 8px; box-sizing: border-box; margin: 0 auto;">
             
             <!-- Email Card -->
             <div class="contact-card" style="background: white; border-radius: 16px; padding: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); transition: all 0.3s ease; cursor: pointer;"
@@ -148,6 +160,7 @@ import { CommonModule } from '@angular/common';
               #contact .contact-grid {
                 grid-template-columns: repeat(3, 1fr);
                 gap: 24px;
+                padding: 0 16px;
               }
               #contact .contact-card {
                 padding: 32px;
@@ -171,6 +184,19 @@ import { CommonModule } from '@angular/common';
             @media (max-width: 480px) {
               #contact .contact-grid {
                 grid-template-columns: 1fr;
+                padding: 0 12px;
+              }
+            }
+            
+            @media (max-width: 767px) {
+              #contact .contact-grid {
+                padding: 0 4px;
+                gap: 8px;
+                max-width: 350px;
+              }
+              #contact .contact-card {
+                padding: 16px;
+                box-sizing: border-box;
               }
             }
           </style>

@@ -22,7 +22,7 @@ import { CommonModule } from '@angular/common';
         <div class="absolute w-64 h-64 bg-pink-400/8 rounded-full blur-2xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-pulse-slow"></div>
       </div>
       
-      <div class="relative z-10 w-full mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="relative z-10 w-full mx-auto px-0 sm:px-6 lg:px-8 text-center">
         <style>
           @media (max-width: 640px) {
             .hero-content {
@@ -32,6 +32,12 @@ import { CommonModule } from '@angular/common';
               margin-right: 0 !important;
               max-width: 100% !important;
               width: 100% !important;
+            }
+            .relative.z-10 {
+              padding-left: 0 !important;
+              padding-right: 0 !important;
+              margin-left: 0 !important;
+              margin-right: 0 !important;
             }
           }
         </style>
