@@ -11,54 +11,14 @@ import { CommonModule } from '@angular/common';
 export class ContactComponent {
   
   downloadCV() {
-    // Create a sample CV download
-    const cvContent = `
-Tanmoy Kumar
-Frontend Developer | Angular | React | TypeScript
-
-Email: tanmoy@example.com
-Phone: +1 (555) 123-4567
-LinkedIn: linkedin.com/in/tanmoy
-
-EXPERIENCE
------------
-Senior Frontend Developer | Tech Company Inc. | 2022 - Present
-- Led development of enterprise-scale applications
-- Implemented responsive design patterns
-- Optimized application performance by 40%
-
-Frontend Developer | StartupXYZ | 2020 - 2022
-- Built modern web applications using Angular and React
-- Collaborated with UX team to implement design systems
-- Reduced page load time by 30%
-
-SKILLS
--------
-Technical: Angular, React, TypeScript, JavaScript, HTML5, CSS3, TailwindCSS
-Tools: Git, Webpack, Vite, Jest, Cypress
-Soft: Team Leadership, Problem Solving, Communication
-
-EDUCATION
----------
-Bachelor of Technology in Computer Science
-University of Technology | 2016 - 2020
-
-ACHIEVEMENTS
-------------
-- Hackathon Winner 2023
-- Performance Award 2022
-- Open Source Contributor
-`;
-
-    const blob = new Blob([cvContent], { type: 'text/plain' });
-    const url = window.URL.createObjectURL(blob);
+    // Download the actual resume PDF file
     const a = document.createElement('a');
-    a.href = url;
-    a.download = 'Tanmoy_Kumar_CV.txt';
+    a.href = '/Tanmoy_Das_Resume.pdf';
+    a.download = 'Tanmoy_Das_Resume.pdf';
+    a.target = '_blank';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
-    window.URL.revokeObjectURL(url);
   }
 
   onButtonHover(event: MouseEvent, isEntering: boolean) {
