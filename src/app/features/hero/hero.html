@@ -29,12 +29,14 @@
             </p>
 
             <!-- Action Buttons -->
+
             <div class="hero__actions">
 
-                <app-button label="Download Resume">
+                <app-button label="Download Resume" (clicked)="downloadResume()">
                 </app-button>
 
-                <app-button label="Let's Talk" variant="secondary">
+
+                <app-button label="Let's Talk" variant="secondary" (clicked)="scrollToContact()">
                 </app-button>
 
             </div>

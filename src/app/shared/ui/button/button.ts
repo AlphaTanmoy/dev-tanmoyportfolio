@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -15,5 +15,14 @@ export class Button {
   type = input<'button' | 'submit'>('button');
 
   disabled = input(false);
+
+  clicked = output<void>();
+
+
+  handleClick() {
+
+    this.clicked.emit();
+
+  }
 
 }

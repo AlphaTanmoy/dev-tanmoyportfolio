@@ -42,6 +42,26 @@ export class Hero implements AfterViewInit, OnDestroy {
 
   }
 
+  downloadResume(): void {
+
+    window.open(
+      '/assets/resume/Tanmoy_Das_Resume.pdf',
+      '_blank'
+    );
+
+  }
+
+
+  scrollToContact(): void {
+
+    document
+      .getElementById('contact')
+      ?.scrollIntoView({
+        behavior: 'smooth'
+      });
+
+  }
+
   ngOnDestroy(): void {
     this.typed?.destroy();
   }

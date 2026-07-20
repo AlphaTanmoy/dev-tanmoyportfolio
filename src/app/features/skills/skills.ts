@@ -17,7 +17,7 @@ export class Skills {
   categories: SkillCategory[] = [
     {
       title: 'Backend Development',
-      image: 'assets/images/backend.png',
+      image: '/api.png',
       skills: [
         'Java',
         'Spring Boot',
@@ -30,7 +30,7 @@ export class Skills {
     },
     {
       title: 'Database & Cache',
-      image: 'assets/images/database.png',
+      image: '/db.png',
       skills: [
         'PostgreSQL',
         'MySQL',
@@ -40,7 +40,7 @@ export class Skills {
     },
     {
       title: 'Frontend',
-      image: 'assets/images/frontend.png',
+      image: '/fe.png',
       skills: [
         'Angular',
         'TypeScript',
@@ -51,7 +51,7 @@ export class Skills {
     },
     {
       title: 'DevOps & Cloud',
-      image: 'assets/images/cloud.png',
+      image: '/cloud.png',
       skills: [
         'Docker',
         'Linux',
@@ -62,7 +62,7 @@ export class Skills {
     },
     {
       title: 'Tools & Messaging',
-      image: 'assets/images/tools.png',
+      image: '/tool.png',
       skills: [
         'RabbitMQ',
         'Postman',
