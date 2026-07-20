@@ -1,63 +1,128 @@
 <section class="hero">
+    <div class="container hero__container">
 
-    <div class="container hero-content">
+        <!-- ================= Left Content ================= -->
+        <div class="hero__content">
 
-        <div class="hero-left">
-
-            <span class="greeting">
-                👋 Hello, I'm
+            <span class="hero__badge">
+                🟢 Available for Opportunities
             </span>
 
-            <h1>
+            <span class="hero__greeting">
+                Hello, I'm
+            </span>
 
+            <h1 class="hero__title">
                 Tanmoy
-
-                <span class="text-gradient">
-                    Das
-                </span>
-
+                <span class="text-gradient">Das</span>
             </h1>
 
-            <h2>
-
-                Backend Developer
-
+            <h2 class="hero__subtitle">
+                <span id="typed-role"></span>
             </h2>
 
-            <p>
-
-                Building scalable backend systems,
-                payment gateways, and cloud-ready
-                microservices using Java, Spring Boot,
-                Kotlin, PostgreSQL, Redis, and RabbitMQ.
-
+            <p class="hero__description">
+                Passionate Backend Engineer specializing in Java, Spring Boot,
+                Kotlin, and Microservices. I design secure payment gateways,
+                scalable REST APIs, and cloud-native backend systems with a
+                strong focus on performance, reliability, and clean architecture.
             </p>
 
-            <div class="hero-buttons">
+            <!-- Action Buttons -->
+            <div class="hero__actions">
 
-                <app-button
-                    label="Download CV">
+                <app-button label="Download Resume">
                 </app-button>
 
-                <app-button
-                    label="Contact Me"
-                    variant="secondary">
+                <app-button label="Let's Talk" variant="secondary">
                 </app-button>
+
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="hero__stats">
+
+                <div class="stat">
+                    <h3>2+</h3>
+                    <span>Years Experience</span>
+                </div>
+
+                <div class="stat">
+                    <h3>10+</h3>
+                    <span>Production Features</span>
+                </div>
+
+                <div class="stat">
+                    <h3>12+</h3>
+                    <span>Technologies</span>
+                </div>
 
             </div>
 
         </div>
 
-        <div class="hero-right">
+        <!-- ================= Right Content ================= -->
+
+        <div class="hero__illustration">
 
             <div class="developer-card">
 
-                &lt;/&gt;
+                <div class="developer-card__header">
+                    <div class="developer-card__dot red"></div>
+                    <div class="developer-card__dot yellow"></div>
+                    <div class="developer-card__dot green"></div>
+                </div>
+
+                <div class="developer-card__body">
+
+                    <div class="terminal-line">
+                        <span class="prompt">$</span> java --version
+                    </div>
+
+                    <div class="terminal-output">
+                        Java 21 LTS
+                    </div>
+
+                    <div class="terminal-line">
+                        <span class="prompt">$</span> spring run
+                    </div>
+
+                    <div class="terminal-output success">
+                        Application Started...
+                    </div>
+
+                    <div class="terminal-line">
+                        <span class="prompt">$</span> docker compose up
+                    </div>
+
+                    <div class="terminal-output">
+                        Redis ✔
+                    </div>
+
+                    <div class="terminal-output">
+                        RabbitMQ ✔
+                    </div>
+
+                    <div class="terminal-output">
+                        PostgreSQL ✔
+                    </div>
+
+                </div>
+
+                <div class="tech-stack">
+
+                    <span>Java</span>
+                    <span>Spring Boot</span>
+                    <span>Kotlin</span>
+                    <span>Redis</span>
+                    <span>RabbitMQ</span>
+                    <span>Docker</span>
+
+                </div>
 
             </div>
 
         </div>
 
     </div>
-
 </section>
