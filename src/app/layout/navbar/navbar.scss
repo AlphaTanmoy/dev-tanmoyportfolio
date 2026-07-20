@@ -1,16 +1,14 @@
 .navbar {
 
     position: sticky;
-
     top: 0;
-
     z-index: 1000;
 
     backdrop-filter: blur(14px);
 
-    background: rgba(3,7,18,.75);
+    background: rgba(3, 7, 18, .82);
 
-    border-bottom: 1px solid rgba(255,255,255,.06);
+    border-bottom: 1px solid rgba(255, 255, 255, .06);
 
 }
 
@@ -26,54 +24,82 @@
 
 }
 
-.logo{
+.logo {
 
-    font-size:1.4rem;
+    font-size: 1.4rem;
 
-    font-weight:700;
+    font-weight: 700;
 
-    color:var(--primary);
+    color: var(--primary);
+
+}
+
+/* Desktop */
+
+.desktop-menu {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 1rem;
+
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
 
 }
 
-ul{
+.desktop-menu li {
 
-    display:flex;
-
-    gap:2rem;
-
-    list-style:none;
-
-    margin:0;
-
-    padding:0;
+    display: flex;
 
 }
+
+/* Shared Button Style */
 
 button {
+
     position: relative;
+
     background: transparent;
+
     border: none;
+
     color: var(--text-secondary);
+
     cursor: pointer;
-    padding: 0.65rem 1rem;
+
+    padding: .7rem 1rem;
+
     border-radius: 999px;
-    transition: all .3s ease;
+
+    transition: .3s;
+
     font-size: .95rem;
+
 }
 
 button:hover {
+
     color: white;
-    background: rgba(99,102,241,.08);
+
+    background: rgba(99, 102, 241, .08);
+
 }
 
 button.active {
+
     color: white;
-    background: rgba(99,102,241,.15);
+
+    background: rgba(99, 102, 241, .15);
 
     box-shadow:
-        0 0 12px rgba(99,102,241,.35),
-        inset 0 0 12px rgba(99,102,241,.15);
+        0 0 12px rgba(99, 102, 241, .35),
+        inset 0 0 12px rgba(99, 102, 241, .15);
+
 }
 
 button.active::after {
@@ -95,7 +121,107 @@ button.active::after {
     background: var(--primary);
 
     box-shadow:
-        0 0 8px var(--primary),
+        0 0 10px var(--primary),
         0 0 20px var(--primary);
+
+}
+
+/* Mobile Button */
+
+.menu-toggle {
+
+    display: none;
+
+    font-size: 1.8rem;
+
+    color: white;
+
+    padding: .25rem .5rem;
+
+}
+
+/* Overlay */
+
+.mobile-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.45);
+
+    z-index: 998;
+
+}
+
+/* Mobile Drawer */
+
+.mobile-menu {
+
+    position: fixed;
+
+    top: 72px;
+
+    right: 0;
+
+    width: 280px;
+
+    height: calc(100vh - 72px);
+
+    background: #0f172a;
+
+    border-left: 1px solid rgba(255,255,255,.08);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: .75rem;
+
+    padding: 1.5rem;
+
+    z-index: 999;
+
+    animation: slideIn .3s ease;
+
+}
+
+.mobile-menu button {
+
+    width: 100%;
+
+}
+
+@keyframes slideIn {
+
+    from {
+
+        transform: translateX(100%);
+
+    }
+
+    to {
+
+        transform: translateX(0);
+
+    }
+
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+    .desktop-menu {
+
+        display: none;
+
+    }
+
+    .menu-toggle {
+
+        display: block;
+
+    }
 
 }

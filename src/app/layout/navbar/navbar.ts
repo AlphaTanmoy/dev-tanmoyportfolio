@@ -11,6 +11,7 @@ import { TitleCasePipe } from '@angular/common';
 export class Navbar {
 
   activeSection = signal('about');
+  menuOpen = signal(false);
 
   sections = [
     'about',
@@ -21,14 +22,23 @@ export class Navbar {
     'contact'
   ];
 
-  scrollTo(id: string) {
+  scrollTo(id: string): void {
+
+    this.menuOpen.set(false);
+
     document.getElementById(id)?.scrollIntoView({
-      behavior: 'smooth'
+      behavior: 'smooth',
+      block: 'start'
     });
+
+  }
+
+  toggleMenu(): void {
+    this.menuOpen.update(value => !value);
   }
 
   @HostListener('window:scroll')
-  onScroll() {
+  onScroll(): void {
 
     for (const section of this.sections) {
 
@@ -41,6 +51,9 @@ export class Navbar {
       if (rect.top <= 120 && rect.bottom >= 120) {
         this.activeSection.set(section);
       }
+
     }
+
   }
+
 }

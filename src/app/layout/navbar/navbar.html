@@ -8,14 +8,18 @@
 
         </div>
 
-        <ul>
+        <!-- Desktop -->
+
+        <ul class="desktop-menu">
 
             @for(section of sections; track section){
 
             <li>
 
                 <button
+
                     (click)="scrollTo(section)"
+
                     [class.active]="activeSection()===section">
 
                     {{section | titlecase}}
@@ -28,6 +32,56 @@
 
         </ul>
 
+        <!-- Mobile Button -->
+
+        <button
+
+            class="menu-toggle"
+
+            (click)="toggleMenu()">
+
+            @if(menuOpen()){
+
+            ✕
+
+            }
+
+            @else{
+
+            ☰
+
+            }
+
+        </button>
+
     </div>
 
 </nav>
+
+@if(menuOpen()){
+
+<div class="mobile-overlay"
+
+    (click)="menuOpen.set(false)">
+
+</div>
+
+<nav class="mobile-menu">
+
+    @for(section of sections; track section){
+
+    <button
+
+        (click)="scrollTo(section)"
+
+        [class.active]="activeSection()===section">
+
+        {{section | titlecase}}
+
+    </button>
+
+    }
+
+</nav>
+
+}
