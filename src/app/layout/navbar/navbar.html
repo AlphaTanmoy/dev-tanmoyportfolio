@@ -1,1 +1,33 @@
-<p>navbar works!</p>
+<nav class="navbar">
+
+    <div class="container navbar__container">
+
+        <div class="logo">
+
+            Dev.Tanmoy
+
+        </div>
+
+        <ul>
+
+            @for(section of sections; track section){
+
+            <li>
+
+                <button
+                    (click)="scrollTo(section)"
+                    [class.active]="activeSection()===section">
+
+                    {{section | titlecase}}
+
+                </button>
+
+            </li>
+
+            }
+
+        </ul>
+
+    </div>
+
+</nav>
