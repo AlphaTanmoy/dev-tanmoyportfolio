@@ -1,8 +1,110 @@
-<section id="projects" class="section">
+<section id="projects" class="projects section">
 
     <div class="container">
 
-        <h2>Projects</h2>
+        <h2 class="section-title">
+            Projects
+        </h2>
+
+        <!-- Filter -->
+
+        <div class="project-filter">
+
+            <input
+                type="text"
+                placeholder="Filter by Tech Stack (Java, Kotlin, Spring Boot, AWS...)"
+                (input)="onSearch($event)">
+
+        </div>
+
+
+        <!-- Project Grid -->
+
+        <div class="project-grid">
+
+            @for (project of filteredProjects; track project.name) {
+
+                <div class="project-card">
+
+                    <!-- Status -->
+
+                    <span
+                        class="status"
+                        [class.done]="project.status === 'Done'"
+                        [class.working]="project.status === 'Working'">
+
+                        {{ project.status }}
+
+                    </span>
+
+
+                    <!-- Project Name -->
+
+                    <h3>
+                        {{ project.name }}
+                    </h3>
+
+
+                    <!-- Tech Stack -->
+
+                    <div class="tech-stack">
+
+                        @for (tech of project.techStack; track tech) {
+
+                            <span>
+                                {{ tech }}
+                            </span>
+
+                        }
+
+                    </div>
+
+
+                    <!-- Description -->
+
+                    <p>
+                        {{ project.description }}
+                    </p>
+
+
+                    <!-- Links -->
+
+                    <div class="project-links">
+
+                        @if (project.liveUrl) {
+
+                            <a
+                                [href]="project.liveUrl"
+                                target="_blank"
+                                rel="noopener noreferrer">
+
+                                <i class="fa-solid fa-globe"></i>
+
+                                Live Demo
+
+                            </a>
+
+                        }
+
+
+                        <a
+                            [href]="project.github"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            <i class="fa-brands fa-github"></i>
+
+                            GitHub
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            }
+
+        </div>
 
     </div>
 
