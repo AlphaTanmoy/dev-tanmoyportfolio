@@ -1,0 +1,51 @@
+<section
+id="skills"
+class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+
+Tech Stack
+
+</h2>
+
+<div class="skills-grid">
+
+@for(category of categories;track category){
+
+<div class="skill-card">
+
+<img
+[src]="category.image"
+[alt]="category.title">
+
+<h3>
+
+{{category.title}}
+
+</h3>
+
+<div class="chips">
+
+@for(skill of category.skills;track skill){
+
+<span>
+
+{{skill}}
+
+</span>
+
+}
+
+</div>
+
+</div>
+
+}
+
+</div>
+
+</div>
+
+</section>

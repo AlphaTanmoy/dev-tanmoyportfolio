@@ -1,0 +1,96 @@
+<section id="contact" class="contact section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Let's Connect
+        </h2>
+
+        <p class="contact-subtitle">
+            Looking for a Backend Developer, Java Engineer, or Kotlin Developer?
+            <br>
+            Feel free to reach out for job opportunities, freelance work,
+            collaborations, or technical discussions.
+        </p>
+
+
+        <div class="contact-grid">
+
+
+            <!-- Email -->
+
+            <div class="contact-card">
+
+                <h3>
+                    <i class="fa-solid fa-envelope"></i>
+                    Email
+                </h3>
+
+                <p>
+                    {{email}}
+                </p>
+
+
+                <div class="button-group">
+
+                    <button
+                        class="btn btn-primary"
+                        (click)="copyEmail()">
+
+                        <i class="fa-solid fa-copy"></i>
+                        Copy Email
+
+                    </button>
+
+
+                    <button
+                        class="btn btn-secondary"
+                        (click)="sendMail()">
+
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Send Email
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Resume -->
+
+<div class="contact-card">
+
+    <h3>
+        <i class="fa-solid fa-file-lines"></i>
+        Resume
+    </h3>
+
+    <p>
+        Download my latest Resume.
+    </p>
+
+
+    <div class="resume-button">
+
+        <button
+            class="btn btn-primary"
+            (click)="downloadResume()">
+
+            <i class="fa-solid fa-download"></i>
+            Download Resume
+
+        </button>
+
+    </div>
+
+
+</div>
+
+
+        </div>
+
+    </div>
+
+</section>

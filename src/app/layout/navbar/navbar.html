@@ -1,0 +1,87 @@
+<nav class="navbar">
+
+    <div class="container navbar__container">
+
+        <div class="logo">
+
+            Dev.Tanmoy
+
+        </div>
+
+        <!-- Desktop -->
+
+        <ul class="desktop-menu">
+
+            @for(section of sections; track section){
+
+            <li>
+
+                <button
+
+                    (click)="scrollTo(section)"
+
+                    [class.active]="activeSection()===section">
+
+                    {{section | titlecase}}
+
+                </button>
+
+            </li>
+
+            }
+
+        </ul>
+
+        <!-- Mobile Button -->
+
+        <button
+
+            class="menu-toggle"
+
+            (click)="toggleMenu()">
+
+            @if(menuOpen()){
+
+            ✕
+
+            }
+
+            @else{
+
+            ☰
+
+            }
+
+        </button>
+
+    </div>
+
+</nav>
+
+@if(menuOpen()){
+
+<div class="mobile-overlay"
+
+    (click)="menuOpen.set(false)">
+
+</div>
+
+<nav class="mobile-menu">
+
+    @for(section of sections; track section){
+
+    <button
+
+        (click)="scrollTo(section)"
+
+        [class.active]="activeSection()===section">
+
+        {{section | titlecase}}
+
+    </button>
+
+    }
+
+</nav>
+
+}

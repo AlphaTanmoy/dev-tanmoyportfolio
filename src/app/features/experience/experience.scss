@@ -1,0 +1,439 @@
+.experience {
+
+    padding: 6rem 0;
+
+
+
+    .experience-title {
+
+        font-size: 1.8rem;
+
+        margin-bottom: 3rem;
+
+    }
+
+
+
+    // Timeline
+
+    .timeline {
+
+        position: relative;
+
+        margin-left: 2rem;
+
+
+
+        &::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 150px;
+
+            top: 0;
+
+            bottom: 0;
+
+            width: 2px;
+
+            background: rgba(255, 255, 255, .15);
+
+        }
+
+    }
+
+
+
+    .timeline-item {
+
+        display: grid;
+
+        grid-template-columns: 130px 40px 1fr;
+
+        gap: 1.5rem;
+
+        margin-bottom: 3rem;
+
+        position: relative;
+
+
+    }
+
+
+
+    .timeline-date {
+
+        color: var(--text-secondary);
+
+        font-size: .95rem;
+
+        text-align: right;
+
+        padding-top: .5rem;
+
+    }
+
+
+
+    .timeline-dot {
+
+        width: 14px;
+
+        height: 14px;
+
+        background: #8b5cf6;
+
+        border-radius: 50%;
+
+        margin-top: .7rem;
+
+        z-index: 2;
+
+        box-shadow:
+            0 0 20px rgba(139, 92, 246, .8);
+
+    }
+
+
+
+    .timeline-content {
+
+
+        background: #111827;
+
+        padding: 2rem;
+
+        border-radius: 20px;
+
+        border: 1px solid rgba(255, 255, 255, .08);
+
+
+
+        h4 {
+
+            font-size: 1.4rem;
+
+            margin-bottom: .5rem;
+
+        }
+
+
+
+        .company {
+
+            display: inline-block;
+
+            background: rgba(139, 92, 246, .15);
+
+            color: #c4b5fd;
+
+            padding: .4rem .8rem;
+
+            border-radius: 8px;
+
+            margin-bottom: 1rem;
+
+            font-weight: 600;
+
+        }
+
+
+
+        p {
+
+            color: var(--text-secondary);
+
+            line-height: 1.8;
+
+        }
+
+    }
+
+
+
+
+
+    // Freelancing Cards
+
+
+    .freelance-grid {
+
+        display: grid;
+
+        grid-template-columns:
+
+            repeat(auto-fit, minmax(320px, 1fr));
+
+        gap: 2rem;
+
+    }
+
+
+
+    .freelance-card {
+
+
+        background: #111827;
+
+        padding: 2rem;
+
+        border-radius: 20px;
+
+        border: 1px solid rgba(255, 255, 255, .08);
+
+        transition: .3s;
+
+
+
+        &:hover {
+
+            transform: translateY(-8px);
+
+        }
+
+
+
+        h4 {
+
+            font-size: 1.4rem;
+
+            margin-bottom: 1.5rem;
+
+        }
+
+
+
+        p {
+
+            color: var(--text-secondary);
+
+            line-height: 1.7;
+
+            margin-bottom: .8rem;
+
+        }
+
+
+
+        strong {
+
+            color: white;
+
+        }
+
+
+
+        a {
+
+            color: #a78bfa;
+
+            text-decoration: none;
+
+        }
+
+        position: relative;
+
+
+        .live-badge {
+
+            display: none;
+
+        }
+
+
+
+        &.live {
+
+
+            .live-badge {
+
+                display: flex;
+
+                position: absolute;
+
+                top: 1rem;
+
+                right: 1rem;
+
+
+                padding: .35rem .8rem;
+
+                border-radius: 20px;
+
+
+                font-size: .75rem;
+
+                font-weight: 700;
+
+                letter-spacing: 1px;
+
+
+                color: #22c55e;
+
+                background: rgba(34, 197, 94, .15);
+
+                border: 1px solid rgba(34, 197, 94, .4);
+
+
+
+                box-shadow:
+                    0 0 10px rgba(34, 197, 94, .7),
+                    0 0 25px rgba(34, 197, 94, .4);
+
+
+
+                animation: liveGlow 1.5s infinite alternate;
+
+            }
+
+        }
+    }
+
+
+    @keyframes liveGlow {
+
+        from {
+
+            box-shadow:
+                0 0 8px rgba(34, 197, 94, .5);
+
+        }
+
+
+        to {
+
+            box-shadow:
+                0 0 20px rgba(34, 197, 94, .9),
+                0 0 35px rgba(34, 197, 94, .5);
+
+        }
+
+    }
+
+
+    @media(max-width:768px) {
+
+
+        .timeline {
+
+            margin-left: 0;
+
+
+            &::before {
+
+                left: 7px;
+
+            }
+
+        }
+
+
+
+        .timeline-item {
+
+            grid-template-columns: 30px 1fr;
+
+        }
+
+
+
+        .timeline-date {
+
+            grid-column: 2;
+
+            text-align: left;
+
+            order: -1;
+
+        }
+
+
+
+        .timeline-dot {
+
+            grid-row: 1 / span 2;
+
+        }
+
+
+    }
+
+}
+
+.timeline-content {
+
+    .experience-points {
+
+        margin-top: 1.5rem;
+
+        padding-left: 1.2rem;
+
+
+        li {
+
+            color: var(--text-secondary);
+
+            line-height: 1.8;
+
+            margin-bottom: .6rem;
+
+            position: relative;
+
+
+            &::marker {
+
+                color: #8b5cf6;
+
+            }
+
+        }
+
+    }
+
+}
+
+.company {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: .5rem;
+
+    background: rgba(139, 92, 246, .15);
+
+    color: #c4b5fd;
+
+    padding: .4rem .8rem;
+
+    border-radius: 8px;
+
+    margin-bottom: 1rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: .3s;
+
+
+
+    &:hover {
+
+        background: rgba(139, 92, 246, .25);
+
+        transform: translateY(-2px);
+
+    }
+
+
+
+    i {
+
+        font-size: .9rem;
+
+    }
+
+}

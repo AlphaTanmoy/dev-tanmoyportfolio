@@ -1,0 +1,11 @@
+<button
+  [attr.type]="type()"
+  [disabled]="disabled()"
+  class="btn"
+  [class.btn-primary]="variant() === 'primary'"
+  [class.btn-secondary]="variant() === 'secondary'"
+  (click)="handleClick()">
+
+  {{ label() }}
+
+</button>
