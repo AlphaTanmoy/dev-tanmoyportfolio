@@ -2,125 +2,266 @@ import { Component } from '@angular/core';
 
 interface Project {
 
-    name: string;
+  name: string;
 
-    techStack: string[];
+  techStack: string[];
 
-    status: 'Done' | 'Working';
+  status: 'Done' | 'Working' | 'Updating';
 
-    liveUrl?: string;
+  liveUrl?: string;
 
-    description: string;
+  directLink?: string;
 
-    github: string;
+  associatedText?: string;
+  
+  associatedIcon?: string;
+  
+  description: string;
+
+  github: string;
 
 }
 
 @Component({
 
-    selector: 'app-projects',
+  selector: 'app-projects',
 
-    standalone: true,
+  standalone: true,
 
-    templateUrl: './projects.html',
+  templateUrl: './projects.html',
 
-    styleUrl: './projects.scss'
+  styleUrl: './projects.scss'
 
 })
+
 export class Projects {
+  searchTerm = '';
 
-    searchTerm = '';
+  projects: Project[] = [
 
-    projects: Project[] = [
+    {
 
-        {
+      name: 'Shiva AI ',
 
-            name: 'Task Management System',
+      techStack: [
+        'Java',
+        'Spring Boot',
+        'Ollama',
+        'RAG',
+        'LLM',
+        'PostgreSQL',
+        'Redis'
+      ],
 
-            techStack: [
-                'Java',
-                'Spring Boot',
-                'PostgreSQL',
-                'Redis'
-            ],
+      status: 'Working',
 
-            status: 'Done',
+      liveUrl: 'https://shivaai.tanmoysyatraofficial.store/',
 
-            liveUrl: '',
+      directLink: '',
+      associatedText: '',
+      associatedIcon: '',
 
-            description:
-                'A scalable task management backend with authentication, role management, and REST APIs.',
+      description:
+        'Developing an AI-powered spiritual assistant using Spring Boot, Ollama, and LLMs. Training domain-specific models' +
+        'with Shiva Puranas and implementing Retrieval-Augmented Generation (RAG) to deliver context-aware responses from' +
+        'Shaivism literature.',
 
-            github:
-                'https://github.com/yourusername/project'
+      github:
+        'https://github.com/AlphaTanmoy/shivaAi'
 
-        },
+    },
 
-        {
+    {
 
-            name: 'Payment Gateway Service',
+      name: 'Educare Carefully Institute (Version 1.0)',
 
-            techStack: [
-                'Kotlin',
-                'Spring Boot',
-                'AWS',
-                'Redis'
-            ],
+      techStack: [
+        'Node.js',
+        'Express.js',
+        'Angular.js',
+        'MongoDB',
+        'Vercel',
+        'Render'
+      ],
 
-            status: 'Working',
+      status: 'Done',
 
-            liveUrl: '',
+      liveUrl: 'https://www.eciboard.in/home',
 
-            description:
-                'Microservice-based payment processing system with third-party gateway integrations.',
+      directLink: '',
+      associatedText: '',
+      associatedIcon: '',
 
-            github:
-                'https://github.com/yourusername/payment'
+      description:
+        'Delivered the complete Version 1.0 of an education-management platform which serving 15,000+ students and 50+' +
+        'franchise centers, handling 20,000+ monthly requests. serving 15,000+ students and 50+ franchise centers, handling' +
+        '20,000+ monthly requests.',
 
-        }
+      github:
+        'https://github.com/AlphaTanmoy/eduCare_frontEnd'
 
-    ];
+    },
 
-    filteredProjects: Project[] = [...this.projects];
+    {
 
+      name: 'ASL Recognizer',
 
+      techStack: [
+        'Python',
+        'TensorFlow',
+        'OpenCV',
+        'Flask',
+        'Keras',
+        'MySQL'
+      ],
 
-    onSearch(event: Event): void {
+      status: 'Done',
 
-        const input = event.target as HTMLInputElement;
+      directLink: '',
+      associatedText: '',
+      associatedIcon: '',
+      liveUrl: '',
 
-        this.searchTerm = input.value;
+      description:
+        'ASL Stands for American Sign Language Recognition, build this by using Python, Keras, OpenCV and ' +
+        'Tensorflow as Backend. Developed a model then train it from Keras Dataset and Then also deploy it in' +
+        ' a web Application using Flask and Also made a Desktop Application. Model Accuracy - 97.65%',
 
-        this.filterProjects();
+      github:
+        'https://github.com/AlphaTanmoy/ASL-Recognition'
+
+    },
+
+    {
+
+      name: 'Airline Reservation System',
+
+      techStack: [
+        'Java',
+        'MVC',
+        'JSP',
+        'Servlet',
+        'MySQL',
+        'HTML',
+        'CSS',
+        'JavaScript'
+      ],
+
+      status: 'Done',
+
+      liveUrl: '',
+      directLink: '',
+      associatedText: '',
+      associatedIcon: '',
+
+      description:
+        'This Website works as Online Airline reservation system, web page made using HTML, CSS, JS, ' +
+        'with JSP and Servlet Mechanism Based on MVC Frame work. Also integrated with MySQL Database ' +
+        'with Authentication & Authorization. Also has both Client Portal, Admin Portal and also a basic view Portal.',
+
+      github:
+        'https://github.com/AlphaTanmoy/Airline-Reservation-System'
+
+    },
+
+    {
+
+      name: "Tanmoy's Yatra",
+
+      techStack: [
+        'React.js',
+        'HTML',
+        'CSS',
+        'JavaScript'
+      ],
+
+      status: 'Updating',
+
+      liveUrl: 'https://blog.tanmoysyatraofficial.store',
+      directLink: 'https://www.youtube.com/@TanmoysYatraOfficial',
+      associatedIcon: 'fa-video',
+      associatedText: "Tanmoy's Yatra",
+
+      description:
+        "This is for my Youtube Blog Posts, where I share my travel experiences and also share my travel vlogs. ",
+
+      github:
+        'https://github.com/AlphaTanmoy/tanmoysyatra'
+
+    },
+
+    {
+
+      name: "Drowniness-Detection",
+
+      techStack: [
+        'Java',
+        'Spring Boot',
+        'Python',
+        'React.js',
+        'OpenCV',
+        'TensorFlow',
+        'Keras',
+        'PostgreSQL',
+      ],
+
+      status: 'Done',
+
+      liveUrl: '',
+      directLink: '',
+      associatedText: '',
+      associatedIcon: '',
+
+      description:
+        "Drowniness Detection with Python, Java, Spring boot and Full Stack app in React and Java to monitor the drowsiness of the driver and alert them in case of drowsiness.",
+
+      github:
+        'https://github.com/AlphaTanmoy/Drowniness-Detection'
 
     }
 
+  ];
+
+  filteredProjects: Project[] = [...this.projects];
 
 
-    filterProjects(): void {
 
-        const search = this.searchTerm
-            .trim()
-            .toLowerCase();
+  onSearch(event: Event): void {
 
-        if (!search) {
+    const input = event.target as HTMLInputElement;
 
-            this.filteredProjects = [...this.projects];
+    this.searchTerm = input.value;
 
-            return;
+    this.filterProjects();
 
-        }
+  }
 
-        this.filteredProjects = this.projects.filter(project =>
 
-            project.techStack.some(tech =>
 
-                tech.toLowerCase().includes(search)
+  filterProjects(): void {
 
-            )
+    const search = this.searchTerm
+      .trim()
+      .toLowerCase();
 
-        );
+    if (!search) {
+
+      this.filteredProjects = [...this.projects];
+
+      return;
 
     }
+
+    this.filteredProjects = this.projects.filter(project =>
+
+      project.techStack.some(tech =>
+
+        tech.toLowerCase().includes(search)
+
+      )
+
+    );
+
+  }
 
 }

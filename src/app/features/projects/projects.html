@@ -31,7 +31,8 @@
                     <span
                         class="status"
                         [class.done]="project.status === 'Done'"
-                        [class.working]="project.status === 'Working'">
+                        [class.working]="project.status === 'Working'"
+                        [class.updating]="project.status === 'Updating'">
 
                         {{ project.status }}
 
@@ -80,7 +81,22 @@
 
                                 <i class="fa-solid fa-globe"></i>
 
-                                Live Demo
+                                Live URL
+
+                            </a>
+
+                        }
+
+                        @if (project.directLink) {
+
+                            <a
+                                [href]="project.directLink"
+                                target="_blank"
+                                rel="noopener noreferrer">
+
+                                <i class="fa-solid" [class]="project.associatedIcon"></i>
+
+                               {{ project.associatedText }}
 
                             </a>
 

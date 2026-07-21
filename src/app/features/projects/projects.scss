@@ -102,13 +102,26 @@
 
 
 
-        p {
+       p {
 
-            color:var(--text-secondary);
+        color: var(--text-secondary);
+        line-height: 1.7;
+        word-break: break-word;
 
-            line-height:1.7;
+        a {
+
+            color: #60a5fa;
+            font-weight: 600;
+            text-decoration: underline;
+            transition: color .2s ease;
+
+            &:hover {
+                color: #93c5fd;
+            }
 
         }
+
+    }
 
 
 
@@ -175,6 +188,20 @@
 
 
 
+    .status.updating {
+
+
+        color:#ffa200;
+
+        background:rgba(250,204,21,.15);
+
+        box-shadow:
+
+        0 0 15px rgba(255, 221, 87, 0.7);
+
+
+    }
+
 
 
     .tech-stack {
@@ -214,27 +241,49 @@
 
     .project-links {
 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    align-items: center;
 
-        display:flex;
+    a {
 
-        gap:1rem;
+        display: inline-flex;
+        align-items: center;
+        gap: .45rem;
 
-        margin-top:1.5rem;
+        padding: .65rem 1rem;
 
+        border-radius: 10px;
 
+        background: rgba(139,92,246,.12);
+        border: 1px solid rgba(139,92,246,.35);
 
-        a {
+        color: #c4b5fd;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: .9rem;
 
-            color:#a78bfa;
+        transition: all .25s ease;
 
-            text-decoration:none;
+        white-space: nowrap;
 
-            font-weight:600;
+        i {
+            font-size: 1rem;
+        }
 
+        &:hover {
+
+            background: #8b5cf6;
+            color: white;
+            transform: translateY(-2px);
 
         }
 
     }
+
+}
 
 
 }
