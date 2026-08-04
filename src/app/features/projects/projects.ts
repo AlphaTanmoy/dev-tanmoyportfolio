@@ -73,6 +73,34 @@ export class Projects {
 
     {
 
+      name: 'Server Monitoring ',
+
+      techStack: [
+        'Java',
+        'Spring Boot',
+        'Angular.js',
+        'PostgreSQL',
+        'Redis'
+      ],
+
+      status: 'Done',
+
+      liveUrl: 'https://monitor.tanmoysyatraofficial.store/',
+
+      directLink: '',
+      associatedText: '',
+      associatedIcon: '',
+
+      description:
+        'Developing a server monitoring solution using Angular.js, Spring Boot, and other technologies. Implementing real-time tracking and alerting mechanisms for server performance analysis.',
+
+      github:
+        'https://github.com/AlphaTanmoy/server-monitor-frontend'
+
+    },
+
+    {
+
       name: 'Educare Carefully Institute (Version 1.0)',
 
       techStack: [

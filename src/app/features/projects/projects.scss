@@ -8,7 +8,7 @@
 
         justify-content:center;
 
-        margin-bottom:3rem;
+        margin-bottom:1.25rem;
 
 
 
@@ -44,6 +44,56 @@
     }
 
 
+
+    .project-note {
+
+        max-width: 780px;
+
+        margin: 0 auto 3rem;
+
+        padding: 1rem 1.2rem;
+
+        border-radius: 14px;
+
+        background: rgba(250, 204, 21, 0.12);
+
+        border: 1px solid rgba(250, 204, 21, 0.35);
+
+        color: #fef3c7;
+
+        line-height: 1.7;
+
+        font-size: 0.95rem;
+
+        strong {
+
+            color: #facc15;
+
+        }
+
+        a {
+
+            color: #60a5fa;
+
+            font-weight: 700;
+
+            text-decoration: underline;
+
+            text-underline-offset: 3px;
+
+            transition: color 0.2s ease, text-shadow 0.2s ease;
+
+            &:hover {
+
+                color: #93c5fd;
+
+                text-shadow: 0 0 8px rgba(147, 197, 253, 0.7);
+
+            }
+
+        }
+
+    }
 
 
 
